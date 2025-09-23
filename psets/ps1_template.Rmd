@@ -1,0 +1,109 @@
+---
+title: "ECON 121 FA24 Problem Set 1"
+author: "Your name"
+output: html_document # change to pdf_document if you have LaTeX
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE) # sets the code chunk format
+rm(list = ls()) # clears the environment
+library("tidyverse") # load tidyverse
+```
+
+## Question 1
+
+Verbal: list group members.
+
+\newpage
+
+## Question 2
+
+Code: Load packages and dataset, summarize the data.
+
+Verbal: Interpret the summary statistics.
+
+```{r message=FALSE, warning=FALSE}
+# The PDF will show the code you write here but not the output.
+# Load packages and dataset here.
+
+```
+
+```{r}
+# The PDF will show the code AND output here.
+# Summarize the data here.
+
+```
+
+\newpage
+
+## Question 3
+
+Code: Find the all time most common boy and girl names.
+
+Verbal: Interpret your results.
+
+```{r}
+# All question 3 code here
+
+```
+
+\newpage
+
+## Question 4
+
+Code: Plot time trends in the number of unique names by sex
+
+Verbal: Interpret your results.
+
+```{r}
+# All question 4 code here
+
+```
+
+\newpage
+
+## Question 5
+
+Code: Plot time trends in the number of unique names relative to the number of 
+babies by sex.
+
+Verbal: Interpret your results.
+
+```{r}
+# All question 5 code here
+
+```
+
+\newpage
+
+## Question 6
+
+Verbal: Which names and why?
+
+\newpage
+
+## Question 7
+
+Code: Find all-time frequency of your names and compare with all-time most
+popular names.
+
+Verbal: Interpret your results.
+
+```{r}
+# All question 7 code here
+
+```
+
+\newpage
+
+## Question 8
+
+Code: Graph the annual frequencies of your chosen name(s) over time.
+
+Verbal: Interpret your results.
+
+```{r}
+# All question 8 code here
+
+```
+
