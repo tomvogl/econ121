@@ -1,13 +1,13 @@
 ---
-title: "ECON 121 FA24 Problem Set 1"
+title: "ECON 121 FA25 Problem Set 1"
 author: "Your name"
 output: html_document # change to pdf_document if you have LaTeX
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE) # sets the code chunk format
 rm(list = ls()) # clears the environment
 library("tidyverse") # load tidyverse
+ssa <- read_csv("https://github.com/tomvogl/econ121/raw/main/data/ssa_names.csv") # load dataset
 ```
 
 ## Question 1
@@ -18,19 +18,12 @@ Verbal: list group members.
 
 ## Question 2
 
-Code: Load packages and dataset, summarize the data.
+Code: Summarize the data.
 
 Verbal: Interpret the summary statistics.
 
-```{r message=FALSE, warning=FALSE}
-# The PDF will show the code you write here but not the output.
-# Load packages and dataset here.
-
-```
-
 ```{r}
-# The PDF will show the code AND output here.
-# Summarize the data here.
+# Question 2 code here
 
 ```
 
@@ -43,7 +36,7 @@ Code: Find the all time most common boy and girl names.
 Verbal: Interpret your results.
 
 ```{r}
-# All question 3 code here
+# Question 3 code here
 
 ```
 
@@ -56,7 +49,7 @@ Code: Plot time trends in the number of unique names by sex
 Verbal: Interpret your results.
 
 ```{r}
-# All question 4 code here
+# Question 4 code here
 
 ```
 
@@ -70,7 +63,7 @@ babies by sex.
 Verbal: Interpret your results.
 
 ```{r}
-# All question 5 code here
+# Question 5 code here
 
 ```
 
@@ -90,7 +83,7 @@ popular names.
 Verbal: Interpret your results.
 
 ```{r}
-# All question 7 code here
+# Question 7 code here
 
 ```
 
@@ -103,7 +96,7 @@ Code: Graph the annual frequencies of your chosen name(s) over time.
 Verbal: Interpret your results.
 
 ```{r}
-# All question 8 code here
+# Question 8 code here
 
 ```
 
