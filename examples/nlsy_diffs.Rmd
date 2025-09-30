@@ -19,26 +19,26 @@ load(url("https://github.com/tomvogl/econ121/raw/main/data/nlsy79.rds"))
 
 To get started, Let's look at the structure of the dataset.
 
-```{r echo=TRUE}
+```{r}
 glimpse(nlsy79)
 ```
 
 What are the mean and SD of labor income?
 
-```{r echo=TRUE}
+```{r}
 mean(nlsy79$laborinc18,na.rm=TRUE)
 sd(nlsy79$laborinc18,na.rm=TRUE)
 ```
 
 How about percentiles?
 
-```{r echo=TRUE}
+```{r}
 summary(nlsy79$laborinc18)
 ```
 
 We can see more detail when we plot histograms by race.
 
-```{r echo=TRUE}
+```{r}
 nlsy79 %>% 
   ggplot(aes(x = laborinc18)) +
     geom_histogram() +
@@ -48,7 +48,7 @@ nlsy79 %>%
 We will estimate differences in mean income between blacks and non-blacks. 
 Let's look at means by race.
 
-```{r echo=TRUE}
+```{r}
 nlsy79 %>% 
   drop_na(laborinc18) %>% # removes NA values so we don't need to use na.rm below
   group_by(black) %>% 
@@ -59,28 +59,28 @@ nlsy79 %>%
 
 These results give us all the information we need to test for differences by race.
 The difference is:
-```{r echo=TRUE}
+```{r}
 50798-31505
 ```
 And the t-statistic is
-```{r echo=TRUE}
+```{r}
 (50798-31505)/sqrt(70856^2/4558 + 46907^2/2013)
 ```
 which is well above 1.96, so statistically significant by the usual standards.
 
 An alternative way to run this test is the t-test with unequal variances:
-```{r echo=TRUE}
+```{r}
 t.test(laborinc18 ~ black, data = nlsy79)
 ```
 Equivalently, we can run a regression with heteroskedasticity-robust SEs, 
 using feols() from fixest package
-```{r echo=TRUE}
+```{r}
 feols(laborinc18 ~ black, data = nlsy79, vcov = 'hetero')
 ```
 Note that lm() is the base-R way to estimate a regression, but it doesn't 
 directly allow for robust standard errors, and you need to use summary()
 to even see classical standard errors. feols() from fixest is more convenient.
-```{r echo=TRUE}
+```{r}
 model1 <- lm(laborinc18 ~ black, data = nlsy79)
 model1
 summary(model1)
@@ -91,7 +91,7 @@ It is actually uncommon to test for average differences in the level
 It would be much more typical to restrict to employed individuals. So 
 let's restrict to people restrict to people who worked for pay for at least 
 1000 hours: equivalent to a part-time job of 20 hours per week for 50 weeks.
-```{r echo=TRUE}
+```{r}
 summary(nlsy79$hours18)
 
 nlsy79_workers <- 
@@ -102,7 +102,7 @@ summary(nlsy79_workers$hours18)
 ```
 
 Means by race in the workers sample:
-```{r echo=TRUE}
+```{r}
 nlsy79_workers %>% 
   drop_na(laborinc18) %>%
   group_by(black) %>% 
@@ -113,7 +113,7 @@ nlsy79_workers %>%
 Still a $19k difference.
 
 Now let's look at log earnings.
-```{r echo=TRUE}
+```{r}
 nlsy79_workers <- 
   nlsy79_workers %>% 
     mutate(loginc18 = log(laborinc18))
@@ -127,7 +127,7 @@ nlsy79_workers %>%
 ```
 
 The difference is:
-```{r echo=TRUE}
+```{r}
 10.851-10.616
 ```
 
@@ -136,18 +136,18 @@ although this interpretation relies on calculus [dln(y)/dx]. Since we are doing 
 comparison by a discrete variable, we can think of 23.5% as an approximation .
 
 The t-statistic is now:
-```{r echo=TRUE}
+```{r}
 (10.851-10.616)/sqrt(.867^2/3015 + .849^2/1078)
 ```
 Again well above 1.96, so statistically significant by the usual standards.
 
 As an alterantive way to do the same thing, we can run a t-test with unequal variances:
-```{r echo=TRUE}
+```{r}
 t.test(loginc18 ~ black, data = nlsy79_workers)
 ```
 
 Or run a regression with heteroskedasticity-robust standard errors:
-```{r echo=TRUE}
+```{r}
 feols(loginc18 ~ black, data = nlsy79_workers, vcov = 'hetero')
 ```
 Same results. That is to say, a regression on a "dummy variable"
