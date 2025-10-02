@@ -8,6 +8,10 @@ This coding example estimates racial differences in earnings using data from
 the National Longitudinal Survey of Youth '79. Let's load the packages we
 need as well as the data.
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(results = 'hide', fig.show = 'hide')
+```
+
 ```{r message=FALSE, warning=FALSE}
 rm(list=ls())
 library(tidyverse)
@@ -39,10 +43,9 @@ summary(nlsy79$laborinc18)
 We can see more detail when we plot histograms by race.
 
 ```{r}
-nlsy79 %>% 
-  ggplot(aes(x = laborinc18)) +
-    geom_histogram() +
-    facet_wrap(~black, ncol=1) # separate graphs by race, stacked into one column
+ggplot(nlsy79, aes(x = laborinc18)) +
+  geom_histogram() +
+  facet_wrap(~black, ncol=1) # separate graphs by race, stacked into one column
 ```
 
 We will estimate differences in mean income between blacks and non-blacks. 
@@ -50,7 +53,7 @@ Let's look at means by race.
 
 ```{r}
 nlsy79 %>% 
-  drop_na(laborinc18) %>% # removes NA values so we don't need to use na.rm below
+  drop_na(laborinc18) %>% # removes NA values so we don't need to use na.rm
   group_by(black) %>% 
   summarize(mean=mean(laborinc18),
             sd=sd(laborinc18),
@@ -116,12 +119,13 @@ Now let's look at log earnings.
 ```{r}
 nlsy79_workers <- 
   nlsy79_workers %>% 
-    mutate(loginc18 = log(laborinc18))
+  mutate(loginc18 = log(laborinc18))
 
+# the format() function is just to report more decimal places
 nlsy79_workers %>% 
   drop_na(loginc18) %>%
   group_by(black) %>% 
-  summarize(mean=format(mean(loginc18, na.rm = TRUE)),   # the format() function is just to report more decimal places
+  summarize(mean=format(mean(loginc18, na.rm = TRUE)),
             sd=sd(loginc18, na.rm = TRUE),
             n=n())
 ```
