@@ -1,0 +1,154 @@
+---
+title: "ECON 121 FA25 Problem Set 2"
+author: "Your name"
+output: html_document # change to pdf_document if you have LaTeX
+---
+
+```{r setup, include=FALSE}
+rm(list = ls()) # clears the environment
+library(tidyverse) # for data manipulation and summary statistics
+library(fixest) # for regression
+library(marginaleffects) # for linear and non-linear combinations of coefficients
+load(url("https://github.com/tomvogl/econ121/raw/main/data/cps18.rds")) # load CPS data
+load(url("https://github.com/tvogl/econ121/raw/main/data/nlsy79.rds")) # load NLSY data
+```
+
+## Question 1
+
+Verbal: list group members, if you have them.
+
+\newpage
+
+## Question 2
+
+Verbal answer only, no code.
+
+\newpage
+
+## Question 3
+
+Code: Summarize data.
+
+Verbal: Interpret the summary statistics.
+
+```{r}
+# All question 3 code here
+
+```
+
+\newpage
+
+## Question 4
+
+Code: Estimate regression.
+
+Verbal: Interpret your results.
+
+```{r}
+# All question 4 code here
+
+```
+
+\newpage
+
+## Question 5
+
+Code: Estimate regression.
+
+Verbal: Interpret your results.
+
+```{r}
+# All question 5 code here
+
+```
+
+\newpage
+
+## Question 6
+
+Code: Assess statistical significance.
+
+Verbal: Interpret your results.
+
+```{r}
+# All question 6 code here
+
+```
+
+\newpage
+
+## Question 7
+
+Code: Estimate regressions and assess significance of differences between them.
+
+Verbal: Interpret your results.
+
+```{r}
+# All question 7 code here
+
+```
+
+\newpage
+
+## Question 8
+
+Code: Estimate regression, use delta method.
+
+Verbal: Interpret your results.
+
+```{r}
+# All question 8 code here
+
+```
+
+\newpage
+
+## Question 9
+
+Code: Load dataset, compute unweighted and weighted means.
+
+Verbal: Interpret your results.
+
+```{r}
+# All question 9 code here
+
+```
+
+\newpage
+
+## Question 10
+
+Code: Modify sample, estimate unweighted and weighted regressions.
+
+Verbal: Assess unweighted versus weighted results.
+
+```{r}
+# All question 10 code here
+
+```
+
+\newpage
+
+## Question 11
+
+Verbal answer only, no code.
+
+\newpage
+
+## Question 12
+
+Verbal answer only, no code.
+
+\newpage
+
+## Question 13
+
+Code: Estimate regression.
+
+Verbal: Explain choice of covariates, interpret results.
+
+```{r}
+# All question 13 code here
+
+```
+
