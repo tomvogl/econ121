@@ -10,7 +10,7 @@ library(tidyverse) # for data manipulation and summary statistics
 library(fixest) # for regression
 library(marginaleffects) # for linear and non-linear combinations of coefficients
 load(url("https://github.com/tomvogl/econ121/raw/main/data/cps18.rds")) # load CPS data
-load(url("https://github.com/tvogl/econ121/raw/main/data/nlsy79.rds")) # load NLSY data
+load(url("https://github.com/tomvogl/econ121/raw/main/data/nlsy79.rds")) # load NLSY data
 ```
 
 ## Question 1
