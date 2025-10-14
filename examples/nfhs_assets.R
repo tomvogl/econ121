@@ -32,8 +32,8 @@ summary(nfhs4$assets)
 
 # let's plot the asset score by age. first group the data by age.
 nfhs4_by_age <- 
-  nfhs4 %>% 
-  group_by(age) %>%
+  nfhs4 |>
+  group_by(age) |>
   summarize(mean = weighted.mean(assets, w=weight))
 
 # now plot the means by age. we see a rising but concave relationship.
@@ -130,8 +130,8 @@ hypotheses(model1,"age / (age + ageXrural) = 1")
 # First, let's draw the scatter plots by age, just like last time, but
 # now separating the sample by urban/rural.
 nfhs4_by_age_rural <-
-  nfhs4 %>% 
-  group_by(age, rural) %>%
+  nfhs4 |> 
+  group_by(age, rural) |>
   summarize(mean = weighted.mean(assets,w=weight))
 ggplot(nfhs4_by_age_rural, aes(x=age, y=mean, color=rural)) +
   geom_point()
