@@ -5,6 +5,7 @@
 rm(list=ls())
 library(tidyverse)
 library(fixest)
+library(marginaleffects)
 
 # load nlsy79.rds
 load(url("https://github.com/tomvogl/econ121/raw/main/data/nfhs4.rds"))
