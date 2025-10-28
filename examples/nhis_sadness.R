@@ -22,7 +22,7 @@ nhis2010 <- nhis2010 |> drop_na(asad)
 
 # generate a variable that equals one if ever sad, zero otherwise.
 table(nhis2010$asad)
-nhis2010 <- nhis2010 |> mutate(anysad = ifelse(asad > 0, 1, 0))
+nhis2010$anysad <- ifelse(nhis2010$asad != "None of the time", 1, 0)
 table(nhis2010$anysad)
 
 # SOME DESCRIPTIVE GRAPHS
@@ -55,7 +55,7 @@ table_by_marital <-
   nhis2010 |>
   drop_na(marstat) |>
   group_by(marstat) |>
-  summarize(mean_anysad = mean(anysad)) |>
+  summarize(mean_anysad = mean(anysad))
 
 ggplot(table_by_marital, aes(x = marstat, y = mean_anysad)) + 
   geom_bar(stat = "identity")
