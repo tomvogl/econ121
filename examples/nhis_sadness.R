@@ -18,43 +18,48 @@ load(url("https://github.com/tomvogl/econ121/raw/main/data/nhis2010.rds"))
 summary(nhis2010)
 
 # drop observations with sadness missing/NA.
-nhis2010 <- nhis2010 %>% drop_na(asad)
+nhis2010 <- nhis2010 |> drop_na(asad)
 
 # generate a variable that equals one if ever sad, zero otherwise.
 table(nhis2010$asad)
-nhis2010$anysad <- ifelse(nhis2010$asad != "None of the time", 1, 0)
+nhis2010 <- nhis2010 |> mutate(anysad = ifelse(asad > 0, 1, 0))
 table(nhis2010$anysad)
-# could have also used: nhis2010 <- nhis2010 %>% mutate(anysad = ifelse(asad > 0, 1, 0))
-# or: nhis2010 <- mutate(nhis2010, anysad = ifelse(asad > 0, 1, 0))
 
 # SOME DESCRIPTIVE GRAPHS
 
 # first, sadness by education. I will draw the markers proportional
 # to the number of observations in each cell to emphasize that there
 # are very few individuals with less than 10 years of education.
-nhis2010 %>%
-  drop_na(edyrs) %>%
-  group_by(edyrs) %>%
-  summarize(mean_anysad = mean(anysad), # mean of anysad within each education level
-            numobs = n()) %>%
-  ggplot(aes(x = edyrs, y = mean_anysad, size=numobs)) +
-    geom_point() # scatter plot
+table_by_edyrs <-
+  nhis2010 |>
+  drop_na(edyrs) |>
+  group_by(edyrs) |>
+  summarize(mean_anysad = mean(anysad),
+            numobs = n())
+
+ggplot(table_by_edyrs, aes(x = edyrs, y = mean_anysad, size=numobs)) +
+    geom_point()
 
 # next, sadness by age and sex. here, I won't keep track of cell size.
-nhis2010 %>%
-  drop_na(age, male) %>%
-  group_by(age, male) %>%
-  summarize(mean_anysad = mean(anysad)) %>%
-  ggplot(aes(x = age, y = mean_anysad, color=factor(male))) + # I use factor() so the color scale is categorical, not continuous
-    geom_line() # line plots
+table_by_age_sex <-
+  nhis2010 |>
+  drop_na(age, male) |>
+  group_by(age, male) |>
+  summarize(mean_anysad = mean(anysad))
 
-# finally, sadness by marital status
-nhis2010 %>%
-  drop_na(marstat) %>%
-  group_by(marstat) %>%
-  summarize(mean_anysad = mean(anysad)) %>%
-  ggplot(aes(x = marstat, y = mean_anysad)) + 
-    geom_bar(stat = "identity") # bar plot. identity just tells it to plot the y we specified, instead of a count or proportion.
+ggplot(table_by_age_sex, aes(x = age, y = mean_anysad, color=factor(male))) +
+    geom_line()
+
+# finally, sadness by marital status.
+table_by_marital <-
+  nhis2010 |>
+  drop_na(marstat) |>
+  group_by(marstat) |>
+  summarize(mean_anysad = mean(anysad)) |>
+
+ggplot(table_by_marital, aes(x = marstat, y = mean_anysad)) + 
+  geom_bar(stat = "identity")
+# "identity" plots the y we specified, instead of a count or proportion.
 
 # COMPARING OLS, LOGIT, AND PROBIT
 
@@ -84,15 +89,15 @@ logit_model
 nhis2010$p_logit <- predict(logit_model, nhis2010, type="response")
 
 # summarize predicted values from all three models - very similar!!
-nhis2010 %>%
-  select(p_ols, p_probit, p_logit) %>%
+nhis2010 |>
+  select(p_ols, p_probit, p_logit) |>
   summary()
 
 # correlation matrix of predicted values from all three models - very close to 1!!
 # need to drop_na() because otherwise cor() returns an error
-nhis2010 %>%
-  select(p_ols, p_probit, p_logit) %>%
-  drop_na(p_ols, p_probit, p_logit) %>%
+nhis2010 |>
+  select(p_ols, p_probit, p_logit) |>
+  drop_na(p_ols, p_probit, p_logit) |>
   cor()
 
 # note: the above comparisons of the three predictions are NOT something
