@@ -47,7 +47,7 @@ feols(d(sb_usage) ~ d(primary) + d(secondary) | year,
 feols(d(fatalityrate) ~ d(primary) + d(secondary) | year,
       data = sb, panel.id = ~fips+year)
 # significant positive effects on seat belt usage.
-# significant positive effects on fatality rate.
+# significant negative effects on fatality rate.
 # the change in significance for fatality rate is mainly 
 # coming from smaller standard errors. this is consistent
 # with the FD model being efficient because of serial correlation.
