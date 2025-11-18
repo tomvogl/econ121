@@ -19,7 +19,7 @@ library(fixest)
 load(url("https://github.com/tomvogl/econ121/raw/main/data/wfh.rds"))
 
 # Drop obs with missing calls data
-wfh <- wfh %>% drop_na(calls)
+wfh <- wfh |> drop_na(calls)
 
 # Run an OLS regression of calls per week on WFH. This result will
 # be biased, but it will be useful to compare with our IV estimate
