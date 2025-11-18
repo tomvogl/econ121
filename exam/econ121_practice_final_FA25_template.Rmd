@@ -1,0 +1,160 @@
+---
+title: "ECON 121 FA25 Practice Final Exam"
+author: "Your name"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+rm(list = ls())
+library(tidyverse)
+library(fixest)
+library(marginaleffects)
+load(url("https://github.com/tomvogl/econ121/raw/main/data/migration.rds"))
+```
+
+## Question 1
+
+```{r}
+# Your code here
+```
+
+\newpage
+
+## Question 2
+
+Your verbal answer here
+
+\newpage
+
+## Question 3
+
+```{r}
+# Your code here
+```
+
+\newpage
+
+## Question 4
+
+```{r}
+# Your code here
+```
+
+\newpage
+
+## Question 5
+
+Your verbal answer here
+
+\newpage
+
+## Question 6
+
+```{r}
+# Your code here
+```
+
+\newpage
+
+## Question 7
+
+```{r}
+# Your code here
+```
+
+\newpage
+
+## Question 8
+
+```{r}
+# Your code here
+```
+
+\newpage
+
+## Question 9
+
+Your verbal answer here
+
+\newpage
+
+## Question 10
+
+```{r}
+# Your code here
+```
+
+\newpage
+
+## Question 11
+
+```{r}
+# Your code here
+```
+
+\newpage
+
+## Question 12
+
+Your verbal answer here
+
+\newpage
+
+## Question 13
+
+```{r}
+# Your code here
+```
+
+\newpage
+
+## Question 14
+
+Your verbal answer here
+
+\newpage
+
+## Question 15
+
+Your verbal answer here
+
+\newpage
+
+## Question 16
+
+Your verbal answer here
+
+\newpage
+
+## Question 17
+
+```{r}
+# Your code here
+```
+
+\newpage
+
+## Question 18
+
+Your verbal answer here
+
+\newpage
+
+## Question 19
+
+```{r}
+# Your code here
+```
+
+\newpage
+
+## Question 20
+
+Your verbal answer here
+
+
+
+
+
+
+
