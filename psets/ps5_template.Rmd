@@ -1,0 +1,156 @@
+---
+title: "ECON 121 FA23 Problem Set 5"
+author: "Your name"
+output: html_document # change to pdf_document if you have LaTeX
+---
+
+```{r setup, include=FALSE}
+rm(list = ls()) # clears the environment
+library(tidyverse) # for data manipulation and summary statistics
+library(fixest) # for regression
+crime <- read_csv("https://github.com/tomvogl/econ121/raw/main/data/crime_argentina.csv")
+```
+
+## Question 1
+
+Verbal: list group members.
+
+\newpage
+
+## Question 2
+
+Code: Load packages and dataset, summarize data.
+
+Verbal: Interpret summary statistics.
+
+```{r}
+# All question 2 code here.
+
+```
+
+\newpage
+
+## Question 3
+
+Code: Regression.
+
+Verbal: Interpret.
+
+```{r}
+# All question 3 code here.
+
+```
+
+\newpage
+
+## Question 4
+
+Code: Generate variable.
+
+```{r}
+# All question 4 code here
+
+```
+
+\newpage
+
+## Question 5
+
+Code: Regression.
+
+Verbal: Interpret.
+
+```{r}
+# All question 5 code here
+
+```
+
+\newpage
+
+## Question 6
+
+Code: Regression.
+
+Verbal: Interpret.
+
+```{r}
+# All question 6 code here
+
+```
+
+\newpage
+
+## Question 7
+
+Code: Calculation. 
+
+Verbal: Interpret.
+
+```{r}
+# All question 7 code here
+
+```
+
+\newpage
+
+## Question 8
+
+Code: Regression.
+
+Verbal: Interpret.
+
+```{r}
+# All question 8 code here
+
+```
+
+\newpage
+
+## Question 9
+
+Verbal: Assessment.
+
+\newpage
+
+## Question 10
+
+Verbal: Interpretation.
+
+\newpage
+
+## Question 11
+
+# a.
+
+Code.
+
+```{r}
+
+```
+
+# b. code
+
+```{r}
+
+```
+
+# c. code and verbal
+
+```{r}
+
+```
+
+# d. code and verbal
+
+```{r}
+
+```
+
+# e. code and verbal
+
+```{r}
+
+```
+
+# f. verbal
+
