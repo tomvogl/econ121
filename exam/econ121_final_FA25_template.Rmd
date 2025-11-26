@@ -1,0 +1,162 @@
+---
+title: "ECON 121 FA25 Practice Exam"
+author: "Your name"
+output: html_document # change to pdf_document if you have LaTeX
+---
+
+```{r setup, include=FALSE}
+rm(list = ls())
+library(tidyverse)
+library(fixest)
+library(marginaleffects)
+load(url("https://github.com/tomvogl/econ121/raw/main/data/finance.rds"))
+```
+
+## Question 1
+
+```{r}
+# Code here
+```
+
+\newpage
+
+# Question 2
+
+```{r}
+# Code here
+```
+
+\newpage
+
+## Question 3
+
+```{r}
+# Code here
+```
+
+\newpage
+
+## Question 4
+
+Verbal answer here.
+
+\newpage
+
+## Question 5
+
+```{r}
+# Code here
+```
+
+\newpage
+
+## Question 6
+
+Verbal answer here.
+
+\newpage
+
+## Question 7
+
+```{r}
+# Code here
+```
+
+\newpage
+
+## Question 8
+
+Verbal answer here.
+
+\newpage
+
+## Question 9
+
+```{r}
+# Code here
+```
+
+\newpage
+
+## Question 10
+
+Verbal answer here.
+
+\newpage
+
+## Question 11
+
+```{r}
+# Code here
+```
+
+\newpage
+
+## Question 12
+
+Verbal answer here.
+
+\newpage
+
+## Question 13
+
+```{r}
+# Code here
+```
+
+\newpage
+
+## Question 14
+
+Verbal answer here.
+
+\newpage
+
+## Question 15
+
+Verbal answer here.
+
+\newpage
+
+## Question 16
+
+```{r}
+# Code here
+```
+
+\newpage
+
+## Question 17
+
+Verbal answer here.
+
+\newpage
+
+## Question 18
+
+Verbal answer here.
+
+\newpage
+
+## Question 19
+
+```{r}
+# Code here
+```
+
+\newpage
+
+## Question 20
+
+Verbal answer OR code.
+
+```{r}
+# Code here if applicable
+```
+
+
+
+
+
+
+
