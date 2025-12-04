@@ -1,6 +1,6 @@
 ---
-title: "ECON 121 FA25 Practice Exam"
-author: "Your name"
+title: "ECON 121 FA25 Final Exam"
+author: "Your name and PID"
 output: html_document # change to pdf_document if you have LaTeX
 ---
 
@@ -114,7 +114,9 @@ Verbal answer here.
 
 ## Question 15
 
-Verbal answer here.
+```{r}
+# Code here
+```
 
 \newpage
 

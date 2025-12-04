@@ -8,7 +8,6 @@ rm(list=ls())
 library(tidyverse)
 library(fixest)
 
-
 load(url("https://github.com/tomvogl/econ121/raw/main/data/romania_schools.rds"))
 
 # variables in the dataset
@@ -20,7 +19,7 @@ ls(romania_schools)
 # summarize distance to the town-specific cutoff
 summary(romania_schools$distance)
 
-# plot binned means for 0.05-wide bins
+# binned means for 0.05-wide bins
 binned_means <-
   romania_schools |>
   mutate(bin = floor(distance*20)/20+0.025) |>
